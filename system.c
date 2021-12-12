@@ -29,6 +29,6 @@ int main()
     fd = open("text.txt", O_RDONLY | O_CREAT);
     unlink("text.txt");
     //lseek system call
-    
+    lseek(fd,EOF,1);
 
 }
