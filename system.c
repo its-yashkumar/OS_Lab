@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<unistd.h>
-#include<stdio.h> 
 #include<fcntl.h> 
 #include<errno.h> 
 #include<stdlib.h>
@@ -22,11 +21,14 @@ int main()
     printf("Number of bytes written in file is %d\n",size);
     close(fd);
     //Write System Call
-    fd=open("text1.txt",O_WRONLY | O_CREAT | O_APPEND);
+    fd=open("text1.txt",O_WRONLY | O_EXCL | O_TRUNC);
     size=write(fd,"Hello World to System Calls\n",strlen("Hello World to System Calls\n"));
     printf("fd is :%d\n",fd);
     printf("the number of bits written is %d\n",size);
     //Deleting using unlink
     fd = open("text.txt", O_RDONLY | O_CREAT);
     unlink("text.txt");
+    //lseek system call
+    
+
 }
