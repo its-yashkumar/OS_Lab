@@ -31,7 +31,7 @@
             break;
             case 4:
             fd = open("file1.txt", O_WRONLY | O_CREAT, 0777);
-            sz = write(fd, "Hi, Krishna\n", strlen("Hi, Krishna\n"));
+            sz = write(fd, "Hi, How are you\n", strlen("Hi, How are you\n"));
             printf("sz = %d\n", sz);
             break;
             case 5:
