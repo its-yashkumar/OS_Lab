@@ -4,3 +4,7 @@ exec1
 fork
 exec2
 thread1
+system
+sharemem
+sharemem2
+.gitignore
