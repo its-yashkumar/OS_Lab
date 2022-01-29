@@ -1,5 +1,9 @@
 #include<stdio.h>
 int main(){
-    printf("Hello World");
-    main();
+    while (1)
+    {
+        /* code */
+    }
+    
+    // printf("Hello World");
 }
