@@ -37,7 +37,9 @@ void * producer(void * par){
     item++;
     count++;
     full++;
-    printf("Item added to buffer is:%d\n",item);
+    printf("\nItem added to buffer is:%d\n",item);
+    printf("The value of count is : %d\n",count);
+    printf("The value of in is : %d\n",in);
     sem_post(&s);
     sleep(2);
     }
@@ -58,10 +60,12 @@ void * consumer(void * par){
     {
         full--;
         item=buffer[out];
-        printf("The item consumed is : %d\n",item);
         out=(out+1) % 20;
         count--;
         empty++;
+        printf("\nThe item consumed is : %d\n",item);
+        printf("The value of count is : %d\n",count);
+        printf("The value of out is : %d\n",out);
         sem_post(&s);
     sleep(2);
     }

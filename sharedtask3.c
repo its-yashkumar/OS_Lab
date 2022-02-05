@@ -11,8 +11,9 @@
 
 int main()
 {
+    int k;
     int *sharedMem;
-    int buffArr[20];
+    int buffArr[20] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     int shmID;
 
     shmID = shmget((key_t)2345, 1024, 0666 | IPC_CREAT);
@@ -21,16 +22,20 @@ int main()
     sharedMem = shmat(shmID, NULL, 0);
     printf("Process is attached at address : %p\n", sharedMem);
 
-    for (int i = 0; i < 10; i++)
-    {
-        scanf("%d", &buffArr[i]);
-        *(sharedMem + i) = buffArr[i];
-    }
 
     for (int i = 0; i < 10; i++)
     {
-        printf("Data entered by user is : %d\n", *(sharedMem + i));
+        if (*(sharedMem + i) % 2 == 0)
+        {
+            printf("%d is even\n", *(sharedMem + i));
+        }
+        else
+        {
+            printf("%d is odd\n", *(sharedMem + i));
+        }
     }
 
     return 0;
 }
+
+//! Unique key of segment : 0

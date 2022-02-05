@@ -13,3 +13,5 @@ pc1
 .gitignore
 recurmain
 .gitignore
+*.out
+bank
